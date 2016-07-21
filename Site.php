@@ -3,6 +3,7 @@
 class Site {
 	private $html;
 	private $css;
+	private $content;
 	private $js;
 	private $name;
 	private $url;
@@ -15,19 +16,20 @@ class Site {
 	}
 
 	public function getHtml(){
-		$this->html = '<!DOCTYPE html>
+		echo '<!DOCTYPE html>
 		<html lang="fr">
 			<head>
 				<meta charset="UTF-8">
 				<title>'.$this->getName().'</title>
 				'.$this->getCss().'
 			</head>
-		<body>
-			<h1>'.$this->getName().'</h1>
-			'.$this->getJs().'
+		<body>';
+			include($this->getContent());
+			echo $this->getJs().'
 		</body>
-		</html>
-		';
+		</html>';
+		
+		
 		return $this->html;
 	} 
 	public function setHtml($html){
@@ -51,6 +53,18 @@ class Site {
 		return $this;
 
 	}
+// ******************//
+// private $content //
+// ****************//
+
+	public function setContent($content){
+		$this->content = $content;
+	}
+
+	public function getContent(){
+		return $this->content;
+	}
+
 // *************//
 // private $js //
 // *************//
@@ -91,5 +105,7 @@ $site->setCss("css/style.css")
 	 ->setCss("css/bootstrap.min.css");
 $site->setJs("script/main.js")
 	 ->setJs("script/jquery.min.css");
+$site->setContent("content.php");
 echo $site->getHtml();
- ?>
+
+?>
