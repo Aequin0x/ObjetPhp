@@ -1,9 +1,11 @@
 <?php 
 
-// Je declare une class ( ou l'objet)s
+// Je declare une class ( ou l'objet)
 class Voiture {
-	// Je declare un attr de couelur
+	// Je declare un attr de couleur
 	private $couleur = 'bleu';
+	// Je declare le message 
+	public static $message = "La voiture klaxonne";
 	// Je déclare le constructeur qui va s'éxecuter lors de l'instanciation de l'objet
 	public function __construct($param1){
 	// J'associe le 1er param du constructeur à l'attribut couleur
@@ -11,14 +13,14 @@ class Voiture {
 	}
 	// Je déclare une fonction statique utilisable sans instance
 	public static function klaxonne(){
-		echo "POUIN PUOIN";
+		echo self::$message;
 	}
 	// Je declate une fonction non statique
 	public function klaxon(){
 		echo "La voiture ".$this->couleur." klaxonne";
 	}
 }
-// J'instancie la classe en objet
+
 $renault = new Voiture('vert');
 $bmw = new Voiture('rouge');
 
