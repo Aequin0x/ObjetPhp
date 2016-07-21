@@ -12,7 +12,9 @@ class Site {
 // private $html //
 // *************//
 	public function __construct(){
-		
+		var_dump($_SERVER);
+
+		$this->url = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	}
 
 	public function getHtml(){
@@ -95,6 +97,11 @@ class Site {
 // *************//
 // Private $url //
 // *************//
+	public function getUrl(){
+		return $this->url;
+	} 
+
+
 }
 
 
