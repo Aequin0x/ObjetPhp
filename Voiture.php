@@ -6,6 +6,9 @@ class Voiture {
 	private $couleur = 'bleu';
 	// Je declare le message 
 	public static $message = "La voiture klaxonne";
+
+	private $marque;
+
 	// Je déclare le constructeur qui va s'éxecuter lors de l'instanciation de l'objet
 	public function __construct($param1){
 	// J'associe le 1er param du constructeur à l'attribut couleur
@@ -19,9 +22,13 @@ class Voiture {
 	public function klaxon(){
 		echo "La voiture ".$this->couleur." klaxonne";
 	}
+	public function setMarque($param){
+    $this->marque = $param;
+  }
 }
 
 $renault = new Voiture('vert');
+$renault->setMarque('Renault');
 $bmw = new Voiture('rouge');
 
 
@@ -32,6 +39,8 @@ var_dump($bmw);
 var_dump(Voiture::klaxonne());
 // Manière en objet instacié
 var_dump($bmw->klaxon());
+
+/*******************************************************************************/
 
 
 ?>
