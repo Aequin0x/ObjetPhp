@@ -12,8 +12,6 @@ class Site {
 // private $html //
 // *************//
 	public function __construct(){
-		var_dump($_SERVER);
-
 		$this->url = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 	}
 
@@ -103,16 +101,5 @@ class Site {
 
 
 }
-
-
-
-$site = new Site();
-$site->setName('Les Objets PHP');
-$site->setCss("css/style.css")
-	 ->setCss("css/bootstrap.min.css");
-$site->setJs("script/main.js")
-	 ->setJs("script/jquery.min.css");
-$site->setContent("content.php");
-echo $site->getHtml();
 
 ?>
