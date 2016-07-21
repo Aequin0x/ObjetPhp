@@ -9,10 +9,23 @@ class Pokemon {
 	public function setName($name) {
 		$this->name = $name;
 	}
+
+	private $type;
+	public function getType(){
+		return $this->type;
+	}
+	public function setType($type) {
+		$this->type = $type;
+	}
 }
 
-$pikachu = new Pokemon();
-$pikachu->setName('Pikachu');
-echo $pikachu->getName();
 
+$pk = new Pokemon();
+$pk->setName('Pikachu');
+$pk->setType('Electrique');
+
+echo $pk->getName();
+echo $pk->getType();
+
+echo "Votre pokémon est ".$pk->getName().", il est de type".$pk->getType();
 ?>
